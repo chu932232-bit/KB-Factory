@@ -1,0 +1,45 @@
+{
+  "items": [],
+  "companies": [
+    {
+      "id": "comp-default",
+      "name": "Supreme Feeds Ltd",
+      "city": "Gujranwala",
+      "contactPerson": "Farooq Gujjar",
+      "phone": "0300-1234567",
+      "bankDetails": "HBL 1234567890",
+      "totalPurchases": 0,
+      "totalPayments": 0,
+      "currentBalance": 0
+    }
+  ],
+  "parties": [],
+  "customers": [],
+  "purchases": [],
+  "sales": [],
+  "payments": [],
+  "thirdPartyPayments": [],
+  "companyPayments": [],
+  "branchAccount": {
+    "userName": "Farooq Gujjar KB",
+    "branchName": "Farooq Gujjar KB (Branch)",
+    "userBalance": 0,
+    "companyBalance": 0,
+    "primaryCompanyId": "",
+    "primaryCompanyName": ""
+  },
+  "meta": {
+    "businessName": "KB Factory",
+    "tagline": "Wholesale Distributor & Retail Center",
+    "ownerName": "Farooq Gujjar KB",
+    "phone": "",
+    "address": "",
+    "currency": "Rs. (PKR)",
+    "lastSyncTimestamp": "2026-10-25T11:46:19.323Z",
+    "retention": {
+      "active": true,
+      "policyDays": 365,
+      "totalPrunedLifetime": 0
+    }
+  }
+}

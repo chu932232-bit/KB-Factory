@@ -1,0 +1,6 @@
+{
+  "name": "KB Factory",
+  "description": "KB Factory - Animal Feed (Vanda / Bori) Wholesale & Retail management system with real-time inventory, factory ledgers, wholesale & retail khatas, and auto-balancing third-party payments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

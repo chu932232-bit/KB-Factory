@@ -1,0 +1,30 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    // Default deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Health check test connection
+    match /test/{docId} {
+      allow read, write: if true;
+    }
+
+    // User profile document and all user-scoped data
+    // Allows read/write for both authenticated Google sessions and local app sessions
+    match /users/{userId} {
+      allow read, write: if true;
+
+      match /{allPaths=**} {
+        allow read, write: if true;
+      }
+    }
+  }
+}

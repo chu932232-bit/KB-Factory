@@ -1,0 +1,236 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User business profile and metadata",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "businessName": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["userId", "email"]
+    },
+    "Item": {
+      "title": "Item",
+      "description": "Animal feed products and inventory",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "unit": { "type": "string" },
+        "stockBags": { "type": "number" },
+        "purchasePrice": { "type": "number" },
+        "salePrice": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "category", "unit", "stockBags"]
+    },
+    "Company": {
+      "title": "Company",
+      "description": "Feed supplier companies and factories",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "city": { "type": "string" },
+        "phone": { "type": "string" },
+        "totalPurchases": { "type": "number" },
+        "totalPayments": { "type": "number" },
+        "currentBalance": { "type": "number" }
+      },
+      "required": ["id", "name"]
+    },
+    "Party": {
+      "title": "Party",
+      "description": "Wholesale big dealers and party khatas",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "city": { "type": "string" },
+        "totalSales": { "type": "number" },
+        "totalReceived": { "type": "number" },
+        "currentBalance": { "type": "number" }
+      },
+      "required": ["id", "name"]
+    },
+    "Customer": {
+      "title": "Customer",
+      "description": "Local retail farmers and khata accounts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "village": { "type": "string" },
+        "cattleCount": { "type": "number" },
+        "totalSales": { "type": "number" },
+        "totalReceived": { "type": "number" },
+        "currentBalance": { "type": "number" }
+      },
+      "required": ["id", "name"]
+    },
+    "Purchase": {
+      "title": "Purchase",
+      "description": "Factory buy and feed purchase records",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "companyId": { "type": "string" },
+        "companyName": { "type": "string" },
+        "itemId": { "type": "string" },
+        "itemName": { "type": "string" },
+        "quantityBags": { "type": "number" },
+        "ratePerBag": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "paidNow": { "type": "number" },
+        "borrowedAmount": { "type": "number" },
+        "givenOnSpot": { "type": "number" },
+        "biltyNumber": { "type": "string" },
+        "vehicleNumber": { "type": "string" },
+        "driverName": { "type": "string" },
+        "date": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "companyId", "date"]
+    },
+    "Sale": {
+      "title": "Sale",
+      "description": "Wholesale and retail feed sales records",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "saleType": { "type": "string" },
+        "partyId": { "type": "string" },
+        "partyName": { "type": "string" },
+        "itemId": { "type": "string" },
+        "itemName": { "type": "string" },
+        "quantityBags": { "type": "number" },
+        "ratePerBag": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "paidAmount": { "type": "number" },
+        "borrowedLana": { "type": "number" },
+        "paidSpot": { "type": "number" },
+        "invoiceNumber": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["id", "saleType", "partyId", "date"]
+    },
+    "Payment": {
+      "title": "Payment",
+      "description": "Customer payments and supplier payments",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "partyId": { "type": "string" },
+        "partyName": { "type": "string" },
+        "companyId": { "type": "string" },
+        "companyName": { "type": "string" },
+        "amount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "referenceNumber": { "type": "string" },
+        "date": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "type", "amount", "date"]
+    },
+    "ThirdPartyPayment": {
+      "title": "ThirdPartyPayment",
+      "description": "Direct bank deposits by customer into factory account",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "customerPartyId": { "type": "string" },
+        "customerName": { "type": "string" },
+        "companyId": { "type": "string" },
+        "companyName": { "type": "string" },
+        "amount": { "type": "number" },
+        "bankName": { "type": "string" },
+        "depositSlipNumber": { "type": "string" },
+        "date": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "customerPartyId", "companyId", "amount", "date"]
+    },
+    "CompanyPayment": {
+      "title": "CompanyPayment",
+      "description": "Treasury CR / DR payments to factory",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "entryType": { "type": "string" },
+        "amount": { "type": "number" },
+        "description": { "type": "string" },
+        "referenceNumber": { "type": "string" },
+        "date": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "entryType", "amount", "date"]
+    },
+    "BranchAccount": {
+      "title": "BranchAccount",
+      "description": "Live treasury balances for user and company",
+      "type": "object",
+      "properties": {
+        "userName": { "type": "string" },
+        "branchName": { "type": "string" },
+        "userBalance": { "type": "number" },
+        "companyBalance": { "type": "number" },
+        "lastUpdated": { "type": "string" }
+      },
+      "required": ["userName", "branchName"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User business account profile"
+    },
+    "/users/{userId}/items/{itemId}": {
+      "schema": "Item",
+      "description": "Feed product catalog and bag stock"
+    },
+    "/users/{userId}/companies/{companyId}": {
+      "schema": "Company",
+      "description": "Feed suppliers and factories"
+    },
+    "/users/{userId}/parties/{partyId}": {
+      "schema": "Party",
+      "description": "Wholesale big dealers"
+    },
+    "/users/{userId}/customers/{customerId}": {
+      "schema": "Customer",
+      "description": "Retail khata farmers"
+    },
+    "/users/{userId}/purchases/{purchaseId}": {
+      "schema": "Purchase",
+      "description": "Factory feed purchases"
+    },
+    "/users/{userId}/sales/{saleId}": {
+      "schema": "Sale",
+      "description": "Wholesale and retail sales"
+    },
+    "/users/{userId}/payments/{paymentId}": {
+      "schema": "Payment",
+      "description": "Payments and receipts"
+    },
+    "/users/{userId}/thirdPartyPayments/{tppId}": {
+      "schema": "ThirdPartyPayment",
+      "description": "Third-party factory bank deposits"
+    },
+    "/users/{userId}/companyPayments/{cpId}": {
+      "schema": "CompanyPayment",
+      "description": "Treasury CR/DR entries"
+    },
+    "/users/{userId}/branchAccount/{accountId}": {
+      "schema": "BranchAccount",
+      "description": "Branch treasury balance document"
+    }
+  }
+}
